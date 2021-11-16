@@ -9,7 +9,9 @@ fn main() {
         a += 0.07;
         b += 0.03;
 
-        let ((sin_a, cos_a), (sin_b, cos_b), mut b) = (a.sin_cos(), b.sin_cos(), [' '; 1760]);
+        let ((sin_a, cos_a),
+               (sin_b, cos_b),
+                    mut b) = (a.sin_cos(), b.sin_cos(), [' '; 1760]);
 
         let (mut z, mut j): ([f64; 1760], f64) =([0.0; 1760], 0.0);
 
@@ -21,11 +23,14 @@ fn main() {
             while i <= 6.28 {
                 let (w, c) = i.sin_cos();
                 let h = v + 2.0;
-                let (d, t) = (1.0 / (w * h * sin_a + u * cos_a + 5.0), w * h * cos_a - u * sin_a);
-                let (x, y) = (
-                    (40.0 + 30.0 * d * (c * h * cos_b - t * sin_b)) as usize,
+                let (d, t) = (1.0 / (w * h * sin_a + u * cos_a + 5.0),
+                                        w * h * cos_a - u * sin_a);
+
+                let (x, y) = ((40.0 + 30.0 * d * (c * h * cos_b - t * sin_b)) as usize,
                     (12.0 + 15.0 * d * (c * h * sin_b + t * cos_b)) as usize);
-                let (o, n) = (x + 80 * y, 8.0 * ((u * sin_a - w * v * cos_a) * cos_b - w * v * sin_a - u * cos_a - c * v * sin_b));
+
+                let (o, n) = (x + 80 * y, 8.0 * ((u * sin_a - w * v * cos_a)
+                                        * cos_b - w * v * sin_a - u * cos_a - c * v * sin_b));
 
                 if y < 22 && x < 79 && d > z[o] {
                     z[o] = d;
