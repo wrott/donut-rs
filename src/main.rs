@@ -1,3 +1,4 @@
+use std::f64::consts::TAU;
 use std::thread;
 use std::time;
 
@@ -12,11 +13,11 @@ fn main() {
 
         let (mut z, mut j): ([f64; 1760], f64) = ([0.0; 1760], 0.0);
 
-        while j <= 6.28 {
+        while j <= TAU {
             let (u, v) = j.sin_cos();
             let mut i: f64 = 0.0;
 
-            while i <= 6.28 {
+            while i <= TAU {
                 let (w, c) = i.sin_cos();
                 let h = v + 2.0;
                 let (d, t) = (
