@@ -15,11 +15,11 @@ fn main() {
 
         while j <= 6.28 {
 
-            let (u, v) = (j.sin_cos());
+            let (u, v) = j.sin_cos();
             let mut i: f64 = 0.0;
 
             while i <= 6.28 {
-                let (w, c) = (i.sin_cos());
+                let (w, c) = i.sin_cos();
                 let h = v + 2.0;
                 let (d, t) = (1.0 / (w * h * sin_a + u * cos_a + 5.0), w * h * cos_a - u * sin_a);
                 let (x, y) = (
