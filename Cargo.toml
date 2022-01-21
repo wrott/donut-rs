@@ -15,4 +15,4 @@ repository = "https://github.com/wrott/donut-rs.git"
 opt-level = 3
 
 [dependencies]
-libc = "*"
+libc = "0.2.113"
