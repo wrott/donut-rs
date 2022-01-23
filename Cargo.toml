@@ -2,7 +2,7 @@
 name = "donut-rs"
 version = "0.1.0"
 edition = "2021"
-authors = ["wrott <wrottkitkatkatt@gmail.com>"]
+authors = ["Vladyslav Stepanov <wrottkitkatkatt@gmail.com>"]
 license = "MIT"
 description = "Just another donut written in Rust."
 readme = "README.md"
